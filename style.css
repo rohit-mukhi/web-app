@@ -22,7 +22,7 @@ body {
     border: none;
     border-bottom: 2px solid #eee;
     background: transparent;
-    color: #fff;
+    color: black;
     font-size: 16px;
     outline: none;
     appearance: none;
@@ -33,7 +33,7 @@ body {
     left: 0;
     top: -10px;
     font-size: 24px;
-    color: #fff;
+    color:black;
     pointer-events: none;
 }
 
@@ -72,7 +72,7 @@ label {
 .left-side {
     flex: 1;
     padding: 40px;
-    color: white;
+    color: black;
     background: url('https://images.unsplash.com/photo-1524593034081-3c7e3eb2d178?fit=crop&w=900&q=80') center/cover no-repeat;
     display: flex;
     flex-direction: column;
@@ -107,7 +107,7 @@ label {
 .form-box h2 {
     text-align: center;
     margin-bottom: 30px;
-    color: #fff;
+    color: black;
 }
 
 .input-group {
@@ -121,7 +121,7 @@ label {
     border: none;
     border-bottom: 2px solid #eee;
     background: transparent;
-    color: #fff;
+    color: black;
     font-size: 16px;
     outline: none;
 }
@@ -130,7 +130,7 @@ label {
     position: absolute;
     left: 0;
     top: 12px;
-    color: #ccc;
+    color: black;
     pointer-events: none;
     transition: 0.3s ease;
 }
@@ -139,7 +139,7 @@ label {
 .input-group input:valid+label {
     top: -10px;
     font-size: 12px;
-    color: #fff;
+    color: black;
 }
 
 .submit-btn {
@@ -162,11 +162,11 @@ label {
     text-align: center;
     margin-bottom: 20px;
     font-size: 14px;
-    color: #eee;
+    color: black;
 }
 
 .switch-text a {
-    color: #fff;
+    color: black;
     text-decoration: underline;
     cursor: pointer;
 }
