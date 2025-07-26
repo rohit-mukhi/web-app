@@ -2,67 +2,186 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | MarketConnect</title>
     <style>
-        body{
-            background-color: rgb(211, 240, 242);
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
         }
-     .skiptranslate{
-  width:200px;
-  padding-left:10px;
-  margin-left: 30px;
-  background-color: #a7c957;
-  border-radius: 3%;
-}
+
+        body {
+            background-color: #f3f6f5;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #2e7d32;
+            padding: 15px 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+
+        .logo {
+            font-size: 1.7em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Profile Container */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #2e7d32;
+            margin-bottom: 12px;
+        }
+
+        .profile-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .profile-info label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .profile-info input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn-save {
+            margin-top: 30px;
+            padding: 12px;
+            width: 100%;
+            background-color: #2e7d32;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background 0.3s ease;
+        }
+
+        .btn-save:hover {
+            background-color: #1b5e20;
+        }
+
+        @media (max-width: 768px) {
+            .profile-info {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
     </style>
-    <script>
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-        }
-        </script>
-        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 
 <body>
-    <!-- Navbar starts -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Bhandaar</a>
-            <div id="google_translate_element"></div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="vendor.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="category.html">Categories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">My Cart</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Orders</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">My Community</a></li>
-                    <li class="nav-item"><a class="nav-link" href="grievance.html">Grievances</a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
-                </ul>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">MarketConnect</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="list-item.html">List Item</a>
+            <a href="transaction-history.html">Transaction History</a>
+            <a href="profile.html" style="text-decoration: underline;">Profile</a>
+        </div>
+    </div>
+
+    <!-- Profile Content -->
+    <div class="container">
+        <div class="profile-header">
+            <img src="https://i.pravatar.cc/150?img=12" alt="Profile Picture" class="profile-pic" />
+            <h2>Hello, Divya!</h2>
+        </div>
+
+        <div class="profile-info">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" />
+            </div>
+            <div class="form-group">
+                <label for="locality">Locality</label>
+                <input type="text" id="locality">
             </div>
         </div>
-    </nav>
-    <!-- Navbar ends -->
 
-    <div class="container main mt-5 d-flex flex-column justify-content-center align-items-center gap-3">
-       <div class="card d-flex flex-column justify-content-center align-items-center gap-3" style="min-width: 20rem; min-height: 28rem;">
-         <div class="display-picture">
-            <img class="rounded" src="Assets/profile-pic.webp" alt="me" width="100" height="100">
-        </div>
-        <div class="card-footer d-flex flex-column justify-content-center align-items-center gap-3" style="min-width: 20rem;">
-            <div id="userName">Username</div>
-            <div id="location">Costa Brava</div>
-            <div id="role">Vendor</div>
-            <div id="logout"><button class=" btn btn-primary rounded" type="submit">Sign Out</button></div>
-        </div>
-       </div>
+        <button class="btn-save">Update Profile</button>
     </div>
+
 </body>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </html>
