@@ -12,41 +12,10 @@
             padding: 0;
             box-sizing: border-box;
         }
-
-        /* Navbar Styling */
-        .navbar {
-            background-color: #2e7d32;
-            color: white;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        h2 {
+            color:#33691e
         }
-
-        .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 6px 10px;
-            border-radius: 4px;
-        }
-
-        .nav-links li a:hover,
-        .nav-links li a.active {
-            background-color: #1b5e20;
-        }
-
+        
         /* Main Container */
         .container {
             max-width: 1000px;
@@ -121,23 +90,12 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">MarketConnect</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="list-item.html">List Item</a></li>
-            <li><a href="transaction-history.html" class="active">Transaction History</a></li>
-            <li><a href="#">Tutorials</a></li>
-            <li><a href="#">Profile</a></li>
-        </ul>
-    </nav>
 
     <!-- Main Content -->
     <div class="container">
-        <h2>Your Transaction History</h2>
+        <h2 style="color:#33691e">Your Transaction History</h2>
         <table class="history-table">
-            <thead>
+            <thead style="background-color: rgb(117, 206, 117)">
                 <tr>
                     <th>Date</th>
                     <th>Item</th>
