@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transaction History | MarketConnect</title>
+    <style>
+        /* Reset some base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #2e7d32;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 6px 10px;
+            border-radius: 4px;
+        }
+
+        .nav-links li a:hover,
+        .nav-links li a.active {
+            background-color: #1b5e20;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        /* Table Styling */
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .history-table th,
+        .history-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .history-table thead {
+            background-color: #f1f8e9;
+            color: #33691e;
+        }
+
+        .status {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .status.completed {
+            color: green;
+            background-color: #e8f5e9;
+        }
+
+        .status.pending {
+            color: #ff9800;
+            background-color: #fff3e0;
+        }
+
+        .status.failed {
+            color: red;
+            background-color: #ffebee;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+
+            .history-table th,
+            .history-table td {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">MarketConnect</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="list-item.html">List Item</a></li>
+            <li><a href="transaction-history.html" class="active">Transaction History</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Your Transaction History</h2>
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>26 Jul 2025</td>
+                    <td>Tomato</td>
+                    <td>10 kg</td>
+                    <td>₹300</td>
+                    <td class="status completed">Completed</td>
+                </tr>
+                <tr>
+                    <td>25 Jul 2025</td>
+                    <td>Chilli Powder</td>
+                    <td>2 kg</td>
+                    <td>₹220</td>
+                    <td class="status pending">Pending</td>
+                </tr>
+                <tr>
+                    <td>24 Jul 2025</td>
+                    <td>Milk</td>
+                    <td>5 litres</td>
+                    <td>₹250</td>
+                    <td class="status failed">Failed</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
