@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Community | MarketConnect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+            min-height: 100vh;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #388e3c;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar h1 {
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 5rem auto;
+            background: #ffffff;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            font-size: 2rem;
+            color: #2e7d32;
+            margin-bottom: 2rem;
+        }
+
+        .join-btn {
+            padding: 0.9rem 2.5rem;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.3s;
+        }
+
+        .join-btn:hover {
+            background-color: #1b5e20;
+            transform: scale(1.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-links a {
+                padding: 0.7rem;
+                width: 100%;
+            }
+
+            .container h2 {
+                font-size: 1.5rem;
+            }
+
+            .join-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>Web-page</h1>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="categories.html">Categories</a>
+            <a href="cart.html">My Cart</a>
+            <a href="orders.html">Orders</a>
+            <a href="community.html">My Community</a>
+            <a href="grievances.html">Grievances</a>
+            <a href="profile.html">Profile</a>
+
+        </div>
+    </nav>
+
+    <!-- Community Section -->
+    <div class="container">
+        <h2>Find your community</h2>
+        <button class="join-btn">Join a Community</button>
+    </div>
+
+</body>
+
+</html>
