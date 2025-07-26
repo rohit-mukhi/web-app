@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | MarketConnect</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #f3f6f5;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #2e7d32;
+            padding: 15px 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+
+        .logo {
+            font-size: 1.7em;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Profile Container */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #2e7d32;
+            margin-bottom: 12px;
+        }
+
+        .profile-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .profile-info label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .profile-info input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn-save {
+            margin-top: 30px;
+            padding: 12px;
+            width: 100%;
+            background-color: #2e7d32;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background 0.3s ease;
+        }
+
+        .btn-save:hover {
+            background-color: #1b5e20;
+        }
+
+        @media (max-width: 768px) {
+            .profile-info {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">MarketConnect</div>
+        <div class="nav-links">
+            <a href="vendor.html">Home</a>
+            <a href="list-item.html">List Item</a>
+            <a href="transaction-history.html">Transaction History</a>
+            <a href="profile.html" style="text-decoration: underline;">Profile</a>
+        </div>
+    </div>
+
+    <!-- Profile Content -->
+    <div class="container">
+        <div class="profile-header">
+            <img src="https://i.pravatar.cc/150?img=12" alt="Profile Picture" class="profile-pic" />
+            <h2>Hello </h2>
+        </div>
+
+        <div class="profile-info">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" />
+            </div>
+            <div class="form-group">
+                <label for="locality">Locality</label>
+                <input type="text" id="locality">
+            </div>
+        </div>
+
+        <button class="btn-save">Update Profile</button>
+    </div>
+
+</body>
+
+</html>
