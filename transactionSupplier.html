@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transaction History | MarketConnect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        /* Reset some base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            color: #33691e
+        }
+
+        /* Main Container */
+
+        .container h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        /* Table Styling */
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .history-table th,
+        .history-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .history-table thead {
+            background-color: #f1f8e9;
+            color: #33691e;
+        }
+
+        .status {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .status.completed {
+            color: green;
+            background-color: #e8f5e9;
+        }
+
+        .status.pending {
+            color: #ff9800;
+            background-color: #fff3e0;
+        }
+
+        .status.failed {
+            color: red;
+            background-color: #ffebee;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+
+            .history-table th,
+            .history-table td {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Bhandaar</a>
+            <div id="google_translate_element"></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="supplier.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="list-item.html">List Item</a></li>
+                    <li class="nav-item"><a class="nav-link" href="transactionSupplier.html">Transaction History</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="tutorial.html">Tutorials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sprofile.html">Profile</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2 style="color:#33691e">Your Transaction History</h2>
+        <table class="history-table">
+            <thead style="background-color: rgb(117, 206, 117)">
+                <tr>
+                    <th>Date</th>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>26 Jul 2025</td>
+                    <td>Tomato</td>
+                    <td>10 kg</td>
+                    <td>₹300</td>
+                    <td class="status completed">Completed</td>
+                </tr>
+                <tr>
+                    <td>25 Jul 2025</td>
+                    <td>Chilli Powder</td>
+                    <td>2 kg</td>
+                    <td>₹220</td>
+                    <td class="status pending">Pending</td>
+                </tr>
+                <tr>
+                    <td>24 Jul 2025</td>
+                    <td>Milk</td>
+                    <td>5 litres</td>
+                    <td>₹250</td>
+                    <td class="status failed">Failed</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>

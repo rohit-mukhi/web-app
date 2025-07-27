@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>List Item | MarketConnect</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* 🌿 BODY & LAYOUT FIX */
+    body {
+      background-color: #f4f6f8;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    footer {
+      background: #198754;
+      color: white;
+    }
+
+    /* 🌿 FILTER BUTTONS */
+    .filter-btn {
+      margin: 0 5px;
+    }
+
+    /* 🌿 CARD STYLING */
+    .product-card img {
+      height: 180px;
+      object-fit: contain;
+      padding: 0.5rem;
+      background: white;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .product-card .card {
+      transition: transform 0.3s ease;
+    }
+
+    .product-card .card:hover {
+      transform: scale(1.03);
+    }
+
+    /* 🌿 FLOATING ACTION BUTTON */
+    .fab {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 55px;
+      height: 55px;
+      background: #198754;
+      color: white;
+      font-size: 24px;
+      border-radius: 50%;
+      border: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .fab:hover {
+      background: #145c32;
+    }
+
+    .skiptranslate {
+      width: 200px;
+      padding-left: 10px;
+      margin-left: 30px;
+      background-color: #a7c957;
+      border-radius: 3%;
+    }
+  </style>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</head>
+
+<body>
+
+  <!-- 🌿 NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">MarketConnect</a>
+      <div id="google_translate_element"></div>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="supplier.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="list-item.html">List Item</a></li>
+          <li class="nav-item"><a class="nav-link" href="transactionSupplier.html">Transaction History</a></li>
+          <li class="nav-item"><a class="nav-link" href="tutorial.html">Tutorials</a></li>
+          <li class="nav-item"><a class="nav-link" href="sprofile.html">Profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- 🌿 FILTER SECTION -->
+    <div class="container mt-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="text-success">Your Listed Items</h3>
+        <div>
+          <button class="btn btn-outline-success filter-btn" data-filter="all">All</button>
+          <button class="btn btn-outline-success filter-btn" data-filter="spices">Spices</button>
+          <button class="btn btn-outline-success filter-btn" data-filter="vegetables">Vegetables</button>
+          <button class="btn btn-outline-success filter-btn" data-filter="liquids">Liquids</button>
+          <button class="btn btn-outline-success filter-btn" data-filter="fruit">Fruits</button>
+          <button class="btn btn-outline-success filter-btn" data-filter="flour">Flours</button>
+          <button class="btn btn-outline-success filter-btn" data-filter="others">Others</button>
+        </div>
+      </div>
+
+      <!-- 🌿 PRODUCT GRID -->
+      <div class="row g-4" id="productGrid">
+        <!-- 🌟 FIRST ROW -->
+        <div class="col-md-3 product-card" data-category="vegetables">
+          <div class="card h-100 shadow-sm">
+            <img src="Assets/tomatoes.webp" class="card-img-top" alt="Tomato">
+            <div class="card-body text-center">
+              <h5 class="card-title">Tomato</h5>
+              <p class="card-text text-success fw-bold">₹30/kg</p>
+              <button class="btn btn-sm btn-outline-danger remove-btn mt-2">Remove</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 product-card" data-category="spices">
+          <div class="card h-100 shadow-sm">
+            <img src="Assets/Red-Chilly-Powder.jpg" class="card-img-top" alt="Chilli Powder">
+            <div class="card-body text-center">
+              <h5 class="card-title">Chilli Powder</h5>
+              <p class="card-text text-success fw-bold">₹110/kg</p>
+              <button class="btn btn-sm btn-outline-danger remove-btn mt-2">Remove</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 product-card" data-category="vegetables">
+          <div class="card h-100 shadow-sm">
+            <img src="Assets/potato.webp" class="card-img-top" alt="Potato">
+            <div class="card-body text-center">
+              <h5 class="card-title">Potato</h5>
+              <p class="card-text text-success fw-bold">₹20/kg</p>
+              <button class="btn btn-sm btn-outline-danger remove-btn mt-2">Remove</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 product-card" data-category="vegetables">
+          <div class="card h-100 shadow-sm">
+            <img src="Assets/onion.jpeg" class="card-img-top" alt="Onion">
+            <div class="card-body text-center">
+              <h5 class="card-title">Onion</h5>
+              <p class="card-text text-success fw-bold">₹25/kg</p>
+              <button class="btn btn-sm btn-outline-danger remove-btn mt-2">Remove</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 🌟 SECOND ROW -->
+        <div class="col-md-3 product-card" data-category="liquids">
+          <div class="card h-100 shadow-sm">
+            <img src="Assets/milk.webp" class="card-img-top" alt="Milk">
+            <div class="card-body text-center">
+              <h5 class="card-title">Fresh Milk</h5>
+              <p class="card-text text-success fw-bold">₹50/litre</p>
+              <button class="btn btn-sm btn-outline-danger remove-btn mt-2">Remove</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 product-card" data-category="liquids">
+          <div class="card h-100 shadow-sm">
+            <img src="Assets/fortune.avif" class="card-img-top" alt="Sunflower Oil">
+            <div class="card-body text-center">
+              <h5 class="card-title">Sunflower Oil</h5>
+              <p class="card-text text-success fw-bold">₹130/litre</p>
+              <button class="btn btn-sm btn-outline-danger remove-btn mt-2">Remove</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 product-card" data-category="spices">
+          <div class="card h-100 shadow-sm">
+            <img src="Assets/turmeric powder.jpg" class="card-img-top" alt="Turmeric Powder">
+            <div class="card-body text-center">
+              <h5 class="card-title">Turmeric Powder</h5>
+              <p class="card-text text-success fw-bold">₹90/kg</p>
+              <button class="btn btn-sm btn-outline-danger remove-btn mt-2">Remove</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 product-card" data-category="others">
+          <div class="card h-100 shadow-sm">
+            <img src="Assets/paper_Plate.webp" class="card-img-top" alt="Paper Plates">
+            <div class="card-body text-center">
+              <h5 class="card-title">Paper Plates</h5>
+              <p class="card-text text-success fw-bold">₹30/kg</p>
+              <button class="btn btn-sm btn-outline-danger remove-btn mt-2">Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🌿 FLOATING ADD BUTTON -->
+    <button class="fab" data-bs-toggle="modal" data-bs-target="#addProductModal">➕</button>
+
+    <!-- 🌿 ADD PRODUCT MODAL -->
+    <div class="modal fade" id="addProductModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title">Add New Item</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <form id="addItemForm">
+              <div class="mb-3">
+                <label class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="productName" required>
+              </div>
+              <div class="row">
+                <div class="col-6 mb-3">
+                  <label class="form-label">Price</label>
+                  <input type="number" class="form-control" id="productPrice" required>
+                </div>
+                <div class="col-6 mb-3">
+                  <label class="form-label">Unit</label>
+                  <select class="form-control" id="productUnit">
+                    <option value="kg">kg</option>
+                    <option value="litre">litre</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Category</label>
+                <select class="form-control" id="productCategory">
+                  <option value="spices">Spices</option>
+                  <option value="vegetables">Vegetables</option>
+                  <option value="liquids">Liquids</option>
+                  <option value="flour">Flour</option>
+                  <option value="fruit">Fruits</option>
+                  <option value="others">Others</option>
+
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Image URL</label>
+                <input type="text" class="form-control" id="productImage">
+              </div>
+              <button type="submit" class="btn btn-success w-100">Add Item</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 🌿 FOOTER -->
+  <footer class="text-center py-3 mt-5">
+    <p class="mb-0">© 2025 MarketConnect | Supplier Dashboard</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 🌿 REMOVE ITEM FUNCTIONALITY
+    document.addEventListener('click', function (e) {
+      if (e.target.classList.contains('remove-btn')) {
+        const card = e.target.closest('.col-md-3');
+        card.style.transition = "opacity 0.3s ease";
+        card.style.opacity = "0";
+        setTimeout(() => card.remove(), 300);
+      }
+    });
+
+    // 🌿 ADD ITEM FUNCTIONALITY
+    document.getElementById("addItemForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // ✅ Get input values
+      const name = document.getElementById("productName").value;
+      const price = document.getElementById("productPrice").value;
+      const unit = document.getElementById("productUnit").value;
+      const category = document.getElementById("productCategory").value;
+      const image = document.getElementById("productImage").value || "Assets/default.jpg";
+
+      // ✅ Create new product card
+      const productGrid = document.getElementById("productGrid");
+      const col = document.createElement("div");
+      col.className = "col-md-3 product-card";
+      col.setAttribute("data-category", category);
+
+      col.innerHTML = `
+    <div class="card h-100 shadow-sm">
+      <img src="${image}" class="card-img-top" alt="${name}">
+      <div class="card-body text-center">
+        <h5 class="card-title">${name}</h5>
+        <p class="card-text text-success fw-bold">₹${price}/${unit}</p>
+        <button class="btn btn-sm btn-outline-danger remove-btn mt-2">Remove</button>
+      </div>
+    </div>
+  `;
+
+      // ✅ Append to grid
+      productGrid.appendChild(col);
+
+      // ✅ Reset form & close modal
+      document.getElementById("addItemForm").reset();
+      const modal = bootstrap.Modal.getInstance(document.getElementById("addProductModal"));
+      modal.hide();
+    });
+
+    // 🌿 FILTER FUNCTIONALITY
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const productCards = document.querySelectorAll(".product-card");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const filter = button.getAttribute("data-filter");
+
+        document.querySelectorAll(".product-card").forEach(card => {
+          if (filter === "all" || card.getAttribute("data-category") === filter) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        // ✅ Optional: highlight active filter
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+      });
+    });
+  </script>
+</body>
+
+</html>

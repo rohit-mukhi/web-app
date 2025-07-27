@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendor Grievances</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f4f6f8;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      background-color: #343a40;
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #fff !important;
+    }
+
+    /* Form Section */
+    .form-section {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .form-section h4 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Table Section */
+    .table-section h5 {
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .table thead {
+      background-color: #212529;
+      color: white;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    /* Mobile spacing */
+    @media (max-width: 576px) {
+      .form-section {
+        padding: 15px;
+      }
+
+      .table-section h5 {
+        font-size: 1rem;
+      }
+    }
+    .skiptranslate{
+  width:200px;
+  padding-left:10px;
+  margin-left: 30px;
+  background-color: #a7c957;
+  border-radius: 3%;
+}
+  </style>
+   <script>
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+        </script>
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+</head>
+
+<body>
+  <!-- ✅ NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Bhandaar</a>
+      <div id="google_translate_element"></div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="vendor.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="category.html">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">My Cart</a></li>
+          <li class="nav-item"><a class="nav-link" href="orders.html">Orders</a></li>
+           <li class="nav-item"><a class="nav-link" href="community.html">My Community</a></li>
+          <li class="nav-item"><a class="nav-link" href="grievance.html">Grievances</a></li>
+          <li class="nav-item"><a class="nav-link" href="vprofile.html">Profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ✅ MAIN CONTENT -->
+  <div class="container my-4">
+    <!-- 📌 Complaint Form -->
+    <div class="form-section">
+      <h4>Submit a Complaint</h4>
+      <form id="grievanceForm">
+        <div class="mb-3">
+          <label for="issueTitle" class="form-label">Issue Title</label>
+          <input type="text" class="form-control" id="issueTitle" required />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Detailed Description</label>
+          <textarea class="form-control" id="description" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Submit Complaint</button>
+      </form>
+    </div>
+
+    <!-- 📌 Table Section -->
+    <div class="table-section">
+      <h5>Past Grievances</h5>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Issue</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="grievanceTable">
+            <tr>
+              <td>1</td>
+              <td>Late Delivery</td>
+              <td>Items were delivered 2 days late.</td>
+              <td><span class="badge bg-warning text-dark">Pending</span></td>
+              <td>2025-07-20</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Damaged Goods</td>
+              <td>Received broken paper plates.</td>
+              <td><span class="badge bg-success">Resolved</span></td>
+              <td>2025-07-18</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ JS for Form Submission -->
+  <script>
+    document.getElementById("grievanceForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const title = document.getElementById("issueTitle").value;
+      const desc = document.getElementById("description").value;
+      const table = document.getElementById("grievanceTable");
+      const row = table.insertRow(0);
+      const date = new Date().toISOString().split('T')[0];
+      row.innerHTML = `
+        <td>#</td>
+        <td>${title}</td>
+        <td>${desc}</td>
+        <td><span class="badge bg-warning text-dark">Pending</span></td>
+        <td>${date}</td>
+      `;
+      document.getElementById("grievanceForm").reset();
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
