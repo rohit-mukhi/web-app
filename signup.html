@@ -5,78 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
-     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    <style>
+        body {
+            background: #f4f4f4; /* ✅ Neutral background for e-commerce look */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            min-height: 100vh;
         }
-     
+
+        .navbar {
+            background: #898E88 !important;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            color: white !important;
+        }
+
+        /* ✅ Card styling for sign-up form */
+        .signup-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 2rem;
+            max-width: 500px;      /* ✅ Perfect width for forms */
+            width: 90%;
+            margin: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .signup-card h2 {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .btn-custom {
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-weight: bold;
+            border: none;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: #43a047;
+        }
+
+        label {
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
-    <!-- Navbar starts here -->
-     <nav class="navbar bg-body-dark bg-dark">
+
+<!-- ✅ Navbar -->
+<nav class="navbar">
   <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1 " style="color: aliceblue; margin-left: 1rem;">Bhandaar</span>
+    <span class="navbar-brand mb-0 h1">Bhandaar</span>
   </div>
 </nav>
-    <!-- Navbar ends here -->
-<div class="main-container">
-   <div class="container mt-5">
-     <form class="d-flex flex-column justify-content-center gap-3">
-          <div class="form-group row">
-    <label for="inputName3" class="col-sm-2 col-form-label">Full Name</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputName3" style="max-width: 20rem;">
+
+<!-- ✅ Centered Container -->
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 85vh;">
+    <div class="signup-card">
+        <h2>Create an Account</h2>
+        <form class="d-flex flex-column gap-3">
+            
+            <!-- Full Name -->
+            <div>
+                <label for="inputName3">Full Name</label>
+                <input type="text" class="form-control" id="inputName3" placeholder="Enter your name">
+            </div>
+
+            <!-- Location -->
+            <div>
+                <label for="inputLocation3">Location</label>
+                <input type="text" class="form-control" id="inputLocation3" placeholder="Enter your location">
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label for="inputEmail3">Email</label>
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Enter your email">
+            </div>
+
+            <!-- Password -->
+            <div>
+                <label for="inputPassword3">Password</label>
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Create a password">
+            </div>
+
+            <!-- Role -->
+            <div>
+                <label class="mb-1">Role</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="vendor" value="vendor" checked>
+                    <label class="form-check-label" for="vendor">Vendor</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="supplier" value="supplier">
+                    <label class="form-check-label" for="supplier">Supplier</label>
+                </div>
+            </div>
+
+            <!-- Sign Up Button -->
+            <button type="submit" class="btn btn-custom">Sign Up</button>
+        </form>
     </div>
-  </div>
-          <div class="form-group row">
-        <label for="inputLocation3" class="col-sm-2 col-form-label">Location</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputName3" style="max-width: 20rem;">
-        </div>
-      </div>
-  <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail3" style="max-width: 20rem;">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword3" style="max-width: 20rem;">
-    </div>
-  </div>
-  <fieldset class="form-group">
-    <div class="row">
-      <legend class="col-form-label col-sm-2 pt-0">Role</legend>
-      <div class="col-sm-10">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="vendor" checked>
-          <label class="form-check-label" for="gridRadios1">
-            Vendor
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="supplier">
-          <label class="form-check-label" for="gridRadios2">
-            Supplier
-          </label>
-        </div>
-      </div>
-    </div>
-  </fieldset>
-  <div class="form-group row">
-    <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Sign Up</button>
-    </div>
-  </div>
-</form>
-   </div>
-   </div>
-    
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </html>
